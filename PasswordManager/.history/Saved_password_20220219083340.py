@@ -21,9 +21,9 @@ def click():
             
             
             
-    if   len(list) == 0:
+    if  list[0] == '' :
         Error_Message = Label(frame , text = "There are no saved passwords.", font = ("Helvetica", 16) , fg = "white", bg = "red")
-        Error_Message.place(relx = 0.5, rely = 0.5, anchor = "center")
+        Error_Message.pack(relx = 0.5, rely = 0.5, anchor = "center")
 
     else:
         for i in range(len(list)):

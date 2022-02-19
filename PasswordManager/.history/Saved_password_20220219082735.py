@@ -21,9 +21,12 @@ def click():
             
             
             
-    if   len(list) == 0:
-        Error_Message = Label(frame , text = "There are no saved passwords.", font = ("Helvetica", 16) , fg = "white", bg = "red")
-        Error_Message.place(relx = 0.5, rely = 0.5, anchor = "center")
+    if os.path.getsize("Passwords.txt") == 0:
+        window = Tk()
+        Error_Message = Label(window, text = "There are no saved passwords", bg = "red", fg = "white", font = ("Arial", 16))
+
+        Error_Message.pack()
+        window.mainloop()
 
     else:
         for i in range(len(list)):
@@ -39,7 +42,7 @@ def click():
             if  column_ == 3:
                 row_ +=1
                 column_ = 0
-        
+        print(os.path.getsize("Passwords.txt"))
         
     
 
