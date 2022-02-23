@@ -84,7 +84,7 @@ def create_win(name):
                     file.write(i)
 
             window = Tk()
-            Error_Message = Label(window, text="Password updated successfully", bg="green", fg="white",
+            Error_Message = Label(window, text="Password updated successfully", bg="red", fg="white",
                                   font=("Arial", 16))
 
             Error_Message.pack()

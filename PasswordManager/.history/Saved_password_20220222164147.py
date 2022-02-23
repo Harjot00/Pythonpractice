@@ -52,7 +52,7 @@ def create_win(name):
                     Username_.insert(0, names[1])
                     Password_.insert(0, names[2])
 
-    def update_password():
+    def save_password():
         if Website_.get() == "" or Username_.get() == "" or Password_.get() == "":
             window = Tk()
             Error_Message = Label(window, text="Error! Please fill all the above fields.", bg="red", fg="white",
@@ -62,39 +62,9 @@ def create_win(name):
             window.mainloop()
 
         else:
-            passwords = []
-            with open("Passwords.txt", 'r') as file:
-                data = file.readlines()
-                
-                for i in data:
-                   savedPasswords =  i.split("|")
-                   
-                   if savedPasswords[0] == name:
-                       savedPasswords[2] = Password_.get() + "\n"
-                       passwords.append("|".join(savedPasswords))
 
-                   else:
-                       passwords.append(i)
-                
-            
-            
-            with  open("Passwords.txt", 'w') as file:     
-                
-                for i in passwords:
-                    file.write(i)
-
-            window = Tk()
-            Error_Message = Label(window, text="Password updated successfully", bg="green", fg="white",
-                                  font=("Arial", 16))
-
-            Error_Message.pack()
-            window.mainloop()
-
-
-            
-                    
-            
-            
+            with open("Passwords.txt", 'a') as file:
+                file.write(Website_.get() + "|" + Username_.get() + "|" + Password_.get() + "\n")
 
     window = Tk()
     window.geometry("600x500")

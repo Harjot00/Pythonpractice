@@ -83,14 +83,6 @@ def create_win(name):
                 for i in passwords:
                     file.write(i)
 
-            window = Tk()
-            Error_Message = Label(window, text="Password updated successfully", bg="green", fg="white",
-                                  font=("Arial", 16))
-
-            Error_Message.pack()
-            window.mainloop()
-
-
             
                     
             

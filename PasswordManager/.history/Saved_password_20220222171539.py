@@ -63,33 +63,19 @@ def create_win(name):
 
         else:
             passwords = []
-            with open("Passwords.txt", 'r') as file:
+            with open("Passwords.txt", 'a') as file:
                 data = file.readlines()
                 
                 for i in data:
                    savedPasswords =  i.split("|")
                    
                    if savedPasswords[0] == name:
-                       savedPasswords[2] = Password_.get() + "\n"
-                       passwords.append("|".join(savedPasswords))
-
-                   else:
-                       passwords.append(i)
-                
-            
-            
-            with  open("Passwords.txt", 'w') as file:     
-                
+                       savedPasswords[2] = Password_.get()
+                       passwords.append(savedPasswords)
+                    
+                file.truncate()
                 for i in passwords:
-                    file.write(i)
-
-            window = Tk()
-            Error_Message = Label(window, text="Password updated successfully", bg="green", fg="white",
-                                  font=("Arial", 16))
-
-            Error_Message.pack()
-            window.mainloop()
-
+                    file.write(i.join("|"))
 
             
                     
