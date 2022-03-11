@@ -1,0 +1,12 @@
+body{
+    background-color: #8ECAE6;
+    font-family: open sans;
+}
+h1{
+    padding-top: 100px;
+    text-align: center;
+}
+#entry{
+    width: 821px;
+    height: 54px;
+}

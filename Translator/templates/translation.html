@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harjot's Translator</title>
+    <link href="static/css/styles.css"  rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/mrs-sheppards" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+</head>
+<body>
+    <h1 style = "font-family: 'Mrs Sheppards', sans-serif;letter-spacing: 5px;">Translator Website</h1>
+    <div style = "display: flex; justify-content: center;">
+
+        <form id="language" method="POST">
+            <input type="text" id="entry" name="text_to_translate" placeholder="Type Here" required value = {{text}}></input>
+            <select name="lang_selected" required>
+
+
+                <option disabled selected>Select Language</option>
+                <option value="ar" {% if translation_lang =="ar" %} selected {% endif %} >Arabic</option>
+                <option value="bn" {% if translation_lang=="bn" %} selected {% endif %}>Bengali</option>
+                <option value="zh-CN" {% if translation_lang =="zh-CN" %} selected {% endif %}>Chinese</option>
+                <option value="nl" {% if translation_lang =="nl" %} selected {% endif %}>Danish</option>
+                <option value="nl" {% if translation_lang =="en" %} selected {% endif %}>English</option>
+                <option value="fi" {% if translation_lang =="fi" %} selected {% endif %}>Finnish</option>
+                <option value="fr" {% if translation_lang =="fr" %} selected {% endif %}>French</option>
+                <option value="de" {% if translation_lang =="de" %} selected {% endif %}>German</option>
+                <option value="hi" {% if translation_lang =="hi" %} selected {% endif %}>Hindi</option>
+                <option value="it" {% if translation_lang=="it" %} selected {% endif %}>Italian</option>
+                <option value="ja" {% if translation_lang =="ja" %} selected {% endif %}>Japanese</option>
+                <option value="ko" {% if translation_lang =="ko" %} selected {% endif %}>Korean</option>
+                <option value="pa" {% if translation_lang =="pa" %} selected {% endif %}>Punjabi</option>
+                <option value="ru" {% if translation_lang =="ru" %} selected {% endif %}>Russian</option>
+            </select>
+            <select name="translate_to" required>
+                <option disabled selected>Translate to</option>
+                <option value="ar" {% if translate_to =="ar" %} selected {% endif %} >Arabic</option>
+                <option value="bn" {% if translate_to =="bn" %} selected {% endif %}>Bengali</option>
+                <option value="zh-CN" {% if translate_to =="zh-CN" %} selected {% endif %}>Chinese</option>
+                <option value="nl" {% if translate_to =="nl" %} selected {% endif %}>Danish</option>
+                <option value="nl" {% if translate_to =="en" %} selected {% endif %}>English</option>
+                <option value="fi" {% if translate_to =="fi" %} selected {% endif %}>Finnish</option>
+                <option value="fr" {% if translate_to =="fr" %} selected {% endif %}>French</option>
+                <option value="de" {% if translate_to =="de" %} selected {% endif %}>German</option>
+                <option value="hi" {% if translate_to =="hi" %} selected {% endif %}>Hindi</option>
+                <option value="it" {% if translate_to =="it" %} selected {% endif %}>Italian</option>
+                <option value="ja" {% if translate_to =="ja" %} selected {% endif %}>Japanese</option>
+                <option value="ko" {% if translate_to =="ko" %} selected {% endif %}>Korean</option>
+                <option value="pa" {% if translate_to =="pa" %} selected {% endif %}>Punjabi</option>
+                <option value="ru" {% if translate_to =="ru" %} selected {% endif %}>Russian</option>
+            </select>
+            <button type="submit">Translate</button>
+        </form>
+    </div>
+
+    <div style =" display: flex; justify-content: center">
+        <input type="text" id ="translation" placeholder="translation" value={{translated_text}}></input>
+    </div>
+</body>
+</html>
